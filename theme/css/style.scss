@@ -1,0 +1,8 @@
+@import 'bootstrap_variables';
+//ALWAYS WRONG ICON PATH
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';
+
+@import 'ownstyle.scss';

@@ -1,0 +1,7 @@
+#Disable Directory Listings
+Options -Indexes
+
+#Rewrite
+RewriteEngine on
+
+RewriteRule ^site/([0-9a-zA-z]+) index.php?site=$1 [NC,L]
