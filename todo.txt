@@ -1,0 +1,23 @@
+TODO:
+
+Allgmein:
++registration better dependecies for password,...
++registrierung passwort warnung ausblenden!
++account change passwort, email,?
++fehlermeldung wenn user falsche seite besucht?
++design improvments
++documentation
++komprimierung deflate /GZIP
++caching
++seo optimierungen usetzen
++ bilder auf die richtige größe skalieren!
++passwordmanager fehlerüberprüfungen
+
+Password:
++aktualisiere die passswörter, falls man einen folder erstellt erledigt
++password copy to cliboard with clipboard.js
++password strength?
++password generator
++password url?
++folder delete -> delete all passwords?-> very risky
++lade erst die daten und dann fade die boxen ein (folder, password)

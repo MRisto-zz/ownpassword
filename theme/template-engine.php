@@ -7,21 +7,50 @@ $ending = ".php";
 
 //which sites are available
 $site = array();
-$site['authentication'] = 'authentication';
-$site['logout'] = 'logout';
-$site['dashboard'] = 'dashboard';
-$site['account'] = 'account';
+$site['authentication']['url'] = 'authentication';
+$site['authentication']['title'] = 'Authentication';
+$site['authentication']['restricted'] = false;
 
+//LOGIN
+$site['logout']['url'] = 'logout';
+$site['logout']['title'] = 'Logout';
+$site['logout']['restricted'] = true;
+//DASBOARD
+$site['dashboard']['url'] = 'dashboard';
+$site['dashboard']['title'] = 'Dashboard';
+$site['dashboard']['restricted'] = true;
+
+//ACCOUTN
+$site['account']['url'] = 'account';
+$site['account']['title'] = 'Account';
+$site['account']['restricted'] = true;
+//if the site exist and the user wants to acces the site
 if (isset($_GET['site']) && $site[$_GET['site']]) {
-	$view = $site[$_GET['site']] . $ending;
-	$title = $_GET['site'];
-} else {
-	if ($user -> isLoggedIn()) {
-		$view = $site['dashboard'] . $ending;
-		$title = 'dashboard';
+	//check if user can acess the site
+	if ($site[$_GET['site']]['restricted'] && $user -> isLoggedIn()) {
+		//site is restricted and user isnt logged in
+		$currentSite = $site[$_GET['site']];
+		$view = $currentSite['url'] . $ending;
+		$title = $currentSite['title'];
 	} else {
-		$view = $site['authentication'] . $ending;
-		$title = 'authentication';
+		//site is restricted and user isnt logged in
+		if ($site[$_GET['site']]['restricted'] && !$user -> isLoggedIn()) {
+			//if not on the login site go to the login site
+			//TODO: FEHLERMELDUNG
+			header('location:' . SCRIPT_ROOT . 'site/' . $site['authentication']['url']);
+		}
+
+		$currentSite = $site[$_GET['site']];
+		$view = $currentSite['url'] . $ending;
+		$title = $currentSite['title'];
 	}
 
+} else {
+	//no site and logged in
+	if ($user -> isLoggedIn()) {
+		//redirect to dashboard
+		header('location:' . SCRIPT_ROOT . 'site/' . $site['dashboard']['url']);
+	} else {
+		header('location:' . SCRIPT_ROOT . 'site/' . $site['authentication']['url']);
+	}
 }

@@ -1,6 +1,6 @@
 <div class="login-wrapper">
         <div class="login-page">
-          <img src="<?php echo SCRIPT_ROOT?>/theme/images/logo.png" class="img-responsive" alt="Cinque Terre">
+          <img src="<?php echo SCRIPT_ROOT?>/theme/images/logo.png" class="img-responsive" alt="Logo">
             <div class="messages">
         <?php
         if($alert != ''){
@@ -11,6 +11,7 @@
         }?>
             </div>
             <div class="form">
+            	<?php if(REGISTRATION_AVAILABLE){?>
                 <form class="register-form" id="registrationForm" action="" method="post">
                     <div class="input-group register register-username">
                         <input type="text" class="form-control" id="reg-username" placeholder="Username" name="username">
@@ -38,6 +39,7 @@
                     <p class="message">Bereits Registiert? <a href="#">Login</a></p>
 
                 </form>
+                <?php }?>
                 <form class="login-form" action="" method="post">
                     <div class="input-group login login-username">
                         <input type="text" class="form-control" placeholder="Username" name="username">
@@ -48,7 +50,9 @@
                     </div>
 
                     <button type="submit" name="login" class="btn btn-primary btn-login">Login</button>
+                    <?php if(REGISTRATION_AVAILABLE){?>
                     <p class="message">Noch nicht registriert? <a href="#">Create an account</a></p>
+                    <?php }?>
                 </form>
             </div>
     </div>

@@ -12,7 +12,8 @@
 		<title><?php
 		//Outputs the right title
 		print $title;
-			?></title>
+	?>
+			- OwnPassword</title>
 		<meta name="author" content="name">
 		<meta name="description" content="description here">
 		<meta name="keywords" content="keywords,here">
@@ -23,36 +24,23 @@
 	<body>
 		<?php
 		if ($user -> isLoggedIn()) {
-			require('theme/template-logged-in.php');
+			require ('theme/template-logged-in.php');
 			//TODO:check the url -> if not something like /site/user then goto
 		} else {
 			//Includes the viewhandler if found
 			if (file_exists('view/handler/' . $view)) {
-				require('view/handler/' . $view);
+				require ('view/handler/' . $view);
 
 			}
 			//Includes the view
-			require('view/' . $view);
+			require ('view/' . $view);
 		}
 		?>
 
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-sass/assets/javascripts/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>js/ownpassword.js" type="text/javascript"></script>
-
-		<script type="text/javascript">
-			function autorun() {
-				//autorun function
-
-			}
-
-			if (window.addEventListener)
-				window.addEventListener("load", autorun, false);
-			else if (window.attachEvent)
-				window.attachEvent("onload", autorun);
-			else
-				window.onload = autorun;
-		</script>
+		<script src="<?php echo SCRIPT_ROOT?>js/passwordmanager.js" type="text/javascript"></script>
 	</body>
 
 </html>

@@ -3,8 +3,8 @@
 		<div class="folders-box">
 			<h2>Ordner</h2>
 			<ul id="folders"></ul>
-			<span class="glyphicon glyphicon-plus" onclick="createFolder()" aria-hidden="true"></span>
-			<span class="glyphicon glyphicon-pencil" onclick="updateFolder()" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-plus" id="createFolder" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-pencil" id="updateFolder" aria-hidden="true"></span>
 		</div>
 	</div>
 	<div class="col-sm-9">
@@ -22,7 +22,7 @@
 				</thead>
 				<tbody id="password-content"></tbody>
 			</table>
-			<span class="glyphicon glyphicon-plus" id="#addPassword" onclick="createPassword()"aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-plus" id="createPassword" aria-hidden="true"></span>
 		</div>
 	</div>
 
@@ -36,7 +36,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel">Passwort bearbeiten</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
@@ -85,7 +85,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<h4 class="modal-title" id="myModalLabel">Ordner bearbeiten</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal">
