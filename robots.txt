@@ -1,0 +1,5 @@
+# Alle Robots sind zugelassen.
+User-agent: *
+
+# Ganze Seite von der Indexierung gesperrt
+Disallow: /

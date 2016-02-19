@@ -28,7 +28,7 @@ function PasswordManager() {
 			var obj = JSON.parse(jsonObj);
 			for (var i = 0; i < obj.length; i++) {
 				//$("#folders").append('<li class="folder" onclick="getPasswords(\'' + obj[i].token_id + '\')">' + obj[i].name + '</li>');
-				$('<li>' + obj[i].name + '</li>').appendTo("#folders").addClass("folder").attr("token-id", obj[i].token_id).click(function() {
+				$('<li class="mouse-cursor">' + obj[i].name + '</li>').appendTo("#folders").addClass("folder").attr("token-id", obj[i].token_id).click(function() {
 
 					self.openFolder($(this));
 				});
@@ -162,7 +162,7 @@ function PasswordManager() {
 			if (jsonObj) {
 				var obj = JSON.parse(jsonObj);
 				for (var i = 0; i < obj.length; i++) {
-					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></td><td id="passwordEditInChange"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td></tr>');
+					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open mouse-cursor" aria-hidden="true"></span></td><td id="passwordEditInChange"><span class="glyphicon glyphicon-pencil mouse-cursor" aria-hidden="true"></span></td></tr>');
 					$('#passwordInChange').addClass("password").click(function() {
 
 						self.showPassword($(this));

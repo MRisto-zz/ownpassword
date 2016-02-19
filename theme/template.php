@@ -12,11 +12,18 @@
 		<title><?php
 		//Outputs the right title
 		print $title;
-	?>
+			?>
 			- OwnPassword</title>
-		<meta name="author" content="name">
-		<meta name="description" content="description here">
-		<meta name="keywords" content="keywords,here">
+		<meta http-equiv="Cache-Control" content="max-age=3600, public">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="Content-Language" content="de" />
+		<meta name="language" content="Deutsch" />
+		<meta name="publisher" content="ownpassword" />
+		<meta name="description" content="Die Verwaltung von Passwörtern - Verfügbarkeit aller Passwürter zu jeder Zeit." />
+		<meta name="author" content="ownpassword">
+		<meta name="date" content="<?=date('c', getlastmod()) ?>">
+		<meta name="keywords" content="passwort, passwort vergessen, passwort Programme, passwort speichern, passwort sammlung, online passwort manager, online passwort verwaltung">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="<?php echo SCRIPT_ROOT?>theme/images/favicon.ico" type="image/vnd.microsoft.icon">
 		<link rel="stylesheet" href="<?php echo SCRIPT_ROOT?>theme/css/style.css" type="text/css">
 	</head>

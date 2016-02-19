@@ -5824,6 +5824,9 @@ button.close {
 .form-bad {
   color: #CC0000; }
 
+.mouse-cursor {
+  cursor: pointer; }
+
 .login-wrapper {
   width: 360px;
   padding: 8% 0 0;

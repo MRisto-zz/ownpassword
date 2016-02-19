@@ -3,8 +3,8 @@
 		<div class="folders-box whitebox">
 			<h2>Ordner</h2>
 			<ul id="folders"></ul>
-			<span class="glyphicon glyphicon-plus" id="createFolder" aria-hidden="true"></span>
-			<span class="glyphicon glyphicon-pencil" id="updateFolder" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-plus mouse-cursor" id="createFolder" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-pencil mouse-cursor" id="updateFolder" aria-hidden="true"></span>
 		</div>
 	</div>
 	<div class="col-sm-9">
@@ -22,7 +22,7 @@
 				</thead>
 				<tbody id="password-content"></tbody>
 			</table>
-			<span class="glyphicon glyphicon-plus" id="createPassword" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-plus mouse-cursor" id="createPassword" aria-hidden="true"></span>
 		</div>
 	</div>
 
