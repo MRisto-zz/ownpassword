@@ -26,21 +26,20 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Altes Passwort:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="text" name="oldPassword" id="accountEdit-password">
-
+						<input class="form-control" type="password" name="oldPassword" id="accountEdit-password">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Neues Passwort:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="text" name="newPassword" id="accountEdit-password">
+						<input class="form-control" type="password" name="newPassword" id="accountEdit-password">
 
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Passwort Wiederholung:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="text" name="newPassword" id="accountEdit-password">
+						<input class="form-control" type="password" name="newPassword" id="accountEdit-password">
 					</div>
 				</div>
 				<div class="col-sm-3"></div>
