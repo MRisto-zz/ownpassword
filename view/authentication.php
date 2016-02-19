@@ -15,27 +15,30 @@
 			<?php if(REGISTRATION_AVAILABLE){
 			?>
 			<form class="register-form" id="registrationForm" action="" method="post">
-				<div class="input-group register register-username">
+				<div class="reg-username-feedback-content"></div>
+				<div class="input-group register reg-username">
 					<input type="text" class="form-control" id="reg-username" placeholder="Username" name="username">
-					<div id="username-feedback" class="input-group-addon">
-						<span class="glyphicon glyphicon-remove reg-username" id="basic-addon" aria-hidden="true" data-toggle="popover-username" rel="popover-username" data-placement="right" data-content=" " title=" "></span>
+					<div class="input-group-addon">
+						<span class="glyphicon glyphicon-remove reg-username-feedback"></span>
 					</div>
-				</div>
 
-				<div class="input-group register register-password">
+				</div>
+				<div class="reg-password-feedback-content"></div>
+				<div class="input-group register reg-password">
 					<input type="password" class="form-control" id="reg-password" placeholder="Password" name="password">
 					<div class="input-group-addon">
-						<span class="glyphicon glyphicon-remove reg-password" id="basic-addon" aria-hidden="true" data-toggle="popover" rel="popover2" data-placement="right" data-content=" " title=" "></span>
+						<span class="glyphicon glyphicon-remove reg-password-feedback"></span>
 					</div>
 				</div>
-				<div class="input-group register regiser-email">
+				<div class="reg-email-feedback-content"></div>
+				<div class="input-group register reg-email">
 					<input type="text" class="form-control" id="reg-email" placeholder="Email" name="email">
 					<div class="input-group-addon">
-						<span class="glyphicon glyphicon-remove reg-email" id="basic-addon" aria-hidden="true" data-toggle="popover" rel="popover4" data-placement="right" data-content=" " title=" "></span>
+						<span class="glyphicon glyphicon-remove reg-email-feedback"></span>
 					</div>
 				</div>
-
-				<button id="register-button" disabled="true" type="submit" class="btn btn-primary btn-register" name="register">
+				<div class="reg-submit-feedback-content"></div>
+				<button id="register-button" type="submit" class="btn btn-primary btn-register" name="register">
 					Create
 				</button>
 

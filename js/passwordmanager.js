@@ -33,8 +33,10 @@ function PasswordManager() {
 					self.openFolder($(this));
 				});
 			}
+			//if he gets a folderToken then he sets it as active and load the passwords from the folder
 			if (folderToken) {
 				$("[token-id=" + folderToken + "]").addClass("active");
+				self.showPasswordList(folderToken);
 			}
 
 		});
@@ -68,7 +70,8 @@ function PasswordManager() {
 				//update PasswordList after update
 				console.log("ADDED Folder");
 				//update the folder list and set the new folder as active
-				self.getFolders(jsonObj);
+				var obj = JSON.parse(jsonObj);
+				self.getFolders(obj);
 				$('#folderEditModal').modal('hide');
 			});
 
@@ -182,6 +185,7 @@ function PasswordManager() {
 		//shows passwords
 		self.showPasswordList(folder.attr("token-id"));
 	};
+
 
 	//show  the password
 	self.showPassword = function(callingItem) {
@@ -309,7 +313,6 @@ function PasswordManager() {
 
 	};
 }
-
 
 
 $(document).ready(function() {

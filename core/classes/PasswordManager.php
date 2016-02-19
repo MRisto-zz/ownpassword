@@ -143,6 +143,11 @@ class PasswordManager {
 	//deletes a folder
 	function deleteFolder($userToken, $folderToken) {
 		$userId = $this -> getUserId($userToken);
+		$folderId = $this -> getFolderId($folderToken);
+		//delete all passwords from this Folder
+		$query = "DELETE FROM passwords WHERE folder_id='$folderId' AND user_id='$userId'";
+		$this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
+		//delete folder
 		$query = "DELETE FROM folders WHERE token_id ='$folderToken' AND user_id='$userId'";
 		$this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
 	}

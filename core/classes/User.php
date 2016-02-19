@@ -44,7 +44,7 @@ class User {
 	//trys to register the user if sucessfull returns info, if not returns alert
 	function tryToRegister($regFormUsername, $regFormEmail, $regFormPassword) {
 
-		if (isUsernameUnique($regFormUsername) && isEmailUnique($regFormEmail)) {
+		if ($this->isUsernameUnique($regFormUsername) && $this->isEmailUnique($regFormEmail)) {
 			//Saved in the database with the user
 			$random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), TRUE));
 			//Generates the saved user password with APPSALT $ $random_salt
@@ -73,16 +73,16 @@ class User {
 
 	//checks if the user with the given username exists
 	function isUsernameUnique($data) {
-		return $this->checkUserExist('username', $data);
+		return $this->checkUserUnique('username', $data);
 	}
 
 	//checks if the user with the given email exists
 	function isEmailUnique($data) {
-		return $this->checkUserExist('email', $data);
+		return $this->checkUserUnique('email', $data);
 	}
 
 	//checks if a user with the given type data combination exists
-	function checkUserExist($type, $data) {
+	function checkUserUnique($type, $data) {
 		if ($stmt = $this->db -> prepare("SELECT * FROM users WHERE ($type = ?)")) {
 			$stmt -> bind_param('s', $data);
 			if (!$stmt -> execute()) {
@@ -94,11 +94,24 @@ class User {
 		$stmt -> store_result();
 		if ($stmt -> num_rows == 0)
 			//no user found with that email
-			return false;
+			return true;
 		else
 			//found a user with that email
-			return true;
+			return false;
 
+	}
+	
+	function getAccountData($userToken){
+		$query = "SELECT username,email FROM users WHERE token_id='$userToken'";
+		return $this -> db -> query($query) -> fetch_object() -> id;
+	}
+	
+	function changeAccountData($userToken,$email,$password){
+		
+	}
+	
+	function changePassword($userToken,$oldPassword, $newPassword){
+		
 	}
 
 }

@@ -3,12 +3,15 @@ TODO:
 Allgmein:
 +registration better dependecies for password,...
 +registrierung passwort warnung ausblenden!
++registierung und login vertikal mittig
 +account change passwort, email,?
 +fehlermeldung wenn user falsche seite besucht?
-+design improvments -> wenn kasper nach logins sucht findet er unser design!!!!
++design improvments -> wenn kasper nach logins sucht findet er unser design!!!! (nicht ganz)
+	+tooltip on pencil and add -> 
 +documentation
 +komprimierung deflate /GZIP
 +caching
+
 
 + bilder auf die richtige größe skalieren!
 +passwordmanager fehlerüberprüfungen? -> Php seite mysql keine rückgabewert

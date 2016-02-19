@@ -11,7 +11,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="<?php echo SCRIPT_ROOT?>site/dashboard">
-			<img src="<?php echo SCRIPT_ROOT?>/theme/images/logo-inverted-small.png" class="img-responsive logo-dashboard" alt="Logo">
+			<img src="<?php echo SCRIPT_ROOT?>/theme/images/logo-inverted.png" class="img-responsive logo-dashboard" alt="Logo">
 			</a>
 		</div>
 		<div class="collapse navbar-collapse">

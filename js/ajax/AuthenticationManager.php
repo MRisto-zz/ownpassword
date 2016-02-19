@@ -18,7 +18,7 @@ if (isset($_POST['action'])) {
 	//Ajax call check if the email is Valid
 	if ($action == 'isEmailUnique') {
 		$email = $db -> real_escape_string($_POST['email']);
-		echo $user->isEmailUnique($email) ? 'true' : 'false;';
+		echo $user->isEmailUnique($email) ? 'true' : 'false';
 	}
 
 }

@@ -17,7 +17,7 @@
 		<meta name="author" content="name">
 		<meta name="description" content="description here">
 		<meta name="keywords" content="keywords,here">
-		<link rel="icon" href="<?php echo SCRIPT_ROOT?>favicon.ico" type="image/vnd.microsoft.icon">
+		<link rel="icon" href="<?php echo SCRIPT_ROOT?>theme/images/favicon.ico" type="image/vnd.microsoft.icon">
 		<link rel="stylesheet" href="<?php echo SCRIPT_ROOT?>theme/css/style.css" type="text/css">
 	</head>
 
