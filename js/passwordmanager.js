@@ -161,8 +161,9 @@ function PasswordManager() {
 			$("#password-content").html("");
 			if (jsonObj) {
 				var obj = JSON.parse(jsonObj);
+                
 				for (var i = 0; i < obj.length; i++) {
-					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open mouse-cursor-pointer" aria-hidden="true"></span></td><td id="passwordEditInChange"><span class="glyphicon glyphicon-pencil mouse-cursor-pointer" aria-hidden="true"></span></td></tr>');
+					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</a></td><td><a href="'+ obj[i].website_url+'">' + obj[i].website_url + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Show Password"></span></td><td id="passwordEditInChange" align="right"><span class="glyphicon glyphicon-pencil mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Edit Password"></span></td></tr>');
 					$('#passwordInChange').addClass("password").click(function() {
 
 						self.showPassword($(this));
@@ -172,6 +173,11 @@ function PasswordManager() {
 
 						self.updatePassword($(this));
 					}).removeAttr('id');
+                    
+                    //init tooltip
+                    $(function () {
+                        $("[data-toggle='tooltip']").tooltip();
+                    });
 				}
 			}
 		});
@@ -219,6 +225,7 @@ function PasswordManager() {
 	//clear the passwordEdit values
 	self.clearPasswordEditValues = function() {
 		$('#passwordEdit-title').val("");
+        $('#passwordEdit-website_url').val("");
 		$('#passwordEdit-username').val("");
 		$('#passwordEdit-password').val("");
 		$('#passwordEdit-token').val("");
@@ -232,6 +239,7 @@ function PasswordManager() {
 		self.getPasswordData(callingItem, function(obj) {
 			$('#passwordEditModal').modal('show');
 			$('#passwordEdit-title').val(obj.title);
+            $('#passwordEdit-website_url').val(obj.website_url);
 			$('#passwordEdit-username').val(obj.username);
 			$('#passwordEdit-password').val(obj.password);
 			$('#passwordEdit-token').val(callingItem.parent().attr("password-token-id"));
@@ -246,6 +254,7 @@ function PasswordManager() {
 						userToken : self.userToken,
 						passwordToken : $('#passwordEdit-token').val(),
 						title : $('#passwordEdit-title').val(),
+                        website_url : $('#passwordEdit-website_url').val(),
 						username : $('#passwordEdit-username').val(),
 						password : $('#passwordEdit-password').val()
 					}
@@ -296,6 +305,7 @@ function PasswordManager() {
 					action : "createPassword",
 					userToken : $("#user-token").val(),
 					title : $('#passwordEdit-title').val(),
+                    website_url : $('#passwordEdit-website_url').val(),
 					folderToken : $('.folder.active').attr("token-id"),
 					username : $('#passwordEdit-username').val(),
 					password : $('#passwordEdit-password').val()
@@ -347,6 +357,10 @@ $(document).ready(function() {
 			//and show the delete button
 			$('.btn-folderEdit-delete').show();
 		});
-
+        
+        //init tooltip
+        $(function () {
+        $("[data-toggle='tooltip']").tooltip();
+        });
 	}
 });

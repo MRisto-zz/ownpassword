@@ -39,7 +39,7 @@ class PasswordManager {
 		$userId = $this -> getUserId($userToken);
 		$folderId = $this -> getFolderId($folderToken);
 		$myArray = array();
-		$query = "SELECT id, title, username,token_id FROM passwords WHERE user_id ='$userId' AND folder_id ='$folderId'";
+		$query = "SELECT title, website_url, username,token_id FROM passwords WHERE user_id ='$userId' AND folder_id ='$folderId'";
 		$result = $this -> db -> query($query);
 		if ($result -> num_rows === 0) {
 			return '';
@@ -56,7 +56,7 @@ class PasswordManager {
 	function getPasswordData($userToken, $passwordToken) {
 		$userId = $this -> getUserId($userToken);
 		$salt = $this -> getSalt($userToken);
-		$query = "SELECT token_id,password,title,username FROM passwords WHERE token_id='$passwordToken' AND user_id='$userId'";
+		$query = "SELECT token_id,password,title, website_url,username FROM passwords WHERE token_id='$passwordToken' AND user_id='$userId'";
 		$result = $this -> db -> query($query) -> fetch_object();
 		$resultpw = $result -> password;
 		$result -> password = $this -> cipherSuite -> decrypt($resultpw, $salt);
@@ -64,12 +64,12 @@ class PasswordManager {
 	}
 
 	//create a password
-	function createPassword($userToken, $folderToken, $passTitle, $passUserName, $password) {
+	function createPassword($userToken, $folderToken, $passTitle, $passwebsite_url, $passUserName, $password) {
 		$userId = $this -> getUserId($userToken);
 		$salt = $this -> getSalt($userToken);
 		$folderId = $this -> getFolderId($folderToken);
 		$encryptedPassword = $this -> cipherSuite -> encrypt($password, $salt);
-		$query = "INSERT INTO passwords (user_id,folder_id,title,username,password) VALUES ('$userId','$folderId','$passTitle','$passUserName','$encryptedPassword')";
+		$query = "INSERT INTO passwords (user_id,folder_id,title,website_url, username,password) VALUES ('$userId','$folderId','$passTitle','$passwebsite_url','$passUserName','$encryptedPassword')";
 		$this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
 
 		//add the token
@@ -80,12 +80,12 @@ class PasswordManager {
 	}
 
 	//updates the password
-	function updatePassword($userToken, $passwordToken, $title, $username, $password) {
+	function updatePassword($userToken, $passwordToken, $title, $website_url, $username, $password) {
 		$userId = $this -> getUserId($userToken);
 		$salt = $this -> getSalt($userToken);
 		$encryptedPassword = $this -> cipherSuite -> encrypt($password, $salt);
 
-		$query = "UPDATE passwords SET title='$title', username='$username',password='$encryptedPassword' WHERE token_id ='$passwordToken' AND user_id='$userId'";
+		$query = "UPDATE passwords SET title='$title', website_url='$website_url', username='$username', password='$encryptedPassword' WHERE token_id ='$passwordToken' AND user_id='$userId'";
 		$this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
 	}
 

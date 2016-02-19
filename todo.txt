@@ -7,10 +7,11 @@ Allgmein:
 +account change passwort, email,?
 +fehlermeldung wenn user falsche seite besucht?
 +design improvments -> wenn kasper nach logins sucht findet er unser design!!!! (nicht ganz)
-	+tooltip on pencil and add -> 
+
 +documentation
 +komprimierung deflate /GZIP
 +caching
++ alles auf Deutsch oder alles auf Englisch?!
 
 
 
@@ -21,11 +22,11 @@ Password:
 +password copy to cliboard with clipboard.js
 +password col passwordstrength?
 +password generator
-+password col url?
 +folder delete -> delete all passwords? mit warnung?
 +lade erst die daten und dann fade die boxen ein (folder, password)?  visibility:hidden;
 +evtl. bei der Passwort-Box auch anzeigen in welchem Folder gerade ist
-+verändern, dass sich die Passwort-Tabelle beim Passwort sichtbar machen nicht mehr verschiebt
++passwort bearbeiten: wenn in inputfeld geklickt wird, dann inhalt direkt markieren, außer bei URL, da soll standartmäßig schon 'https://www.' drin stehen und das soll nicht markiert werden
+
 
 
 Folder:
@@ -45,4 +46,4 @@ Registrierung:
 +nach richtigen eingaben automatisches login und nicht erst wieder zum Login springen
 
 micha:
-+seo optimierungen usetzen?
++seo optimierungen umsetzen?

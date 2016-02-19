@@ -26,15 +26,17 @@ if (isset($_POST['action'])) {
 	} else if ($action == 'createPassword') {
 		$folderToken = $db -> real_escape_string($_POST['folderToken']);
 		$title = $db -> real_escape_string($_POST['title']);
+        $website_url = $db -> real_escape_string($_POST['website_url']);
 		$username = $db -> real_escape_string($_POST['username']);
 		$password = $db -> real_escape_string($_POST['password']);
-		echo json_encode($pwManager -> createPassword($userToken, $folderToken, $title, $username, $password));
+		echo json_encode($pwManager -> createPassword($userToken, $folderToken, $title, $website_url, $username, $password));
 	}else if ($action == 'updatePassword') {
 		$passwordToken = $db -> real_escape_string($_POST['passwordToken']);
 		$title = $db -> real_escape_string($_POST['title']);
+        $website_url = $db -> real_escape_string($_POST['website_url']);
 		$username = $db -> real_escape_string($_POST['username']);
 		$password = $db -> real_escape_string($_POST['password']);
-		echo json_encode($pwManager -> updatePassword($userToken, $passwordToken, $title, $username, $password));
+		echo json_encode($pwManager -> updatePassword($userToken, $passwordToken, $title, $website_url, $username, $password));
 	} else if ($action == 'deletePassword') {
 		$passwordToken = $db -> real_escape_string($_POST['passwordToken']);
 		echo json_encode($pwManager -> deletePassword($userToken, $passwordToken));
