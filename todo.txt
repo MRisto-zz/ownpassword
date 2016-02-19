@@ -13,6 +13,7 @@ Allgmein:
 +caching
 
 
+
 + bilder auf die richtige größe skalieren!
 +passwordmanager fehlerüberprüfungen? -> Php seite mysql keine rückgabewert
 
@@ -23,7 +24,25 @@ Password:
 +password col url?
 +folder delete -> delete all passwords? mit warnung?
 +lade erst die daten und dann fade die boxen ein (folder, password)?  visibility:hidden;
++evtl. bei der Passwort-Box auch anzeigen in welchem Folder gerade ist
++verändern, dass sich die Passwort-Tabelle beim Passwort sichtbar machen nicht mehr verschiebt
 
+
+Folder:
++der erste erstellte Folder eines neuen Users ist direkt aktiv, soll das so sein?
++wenn ein Folder gelöscht wird, dann ist immer der erste Folder wieder aktiv, soll das so sein?
++wenn alle Folder gelöscht werden, dann bleibt der Folder, der als letztes gelöscht wurde immer angezeigt, erst wenn man wieder einen neuen Folder estellt, verschwindet er und der neue Folder wird angezeigt
+
+
+Account:
++Save-Changes-Buttons mit Inputfeldern bündig machen
++aktuelle Eingaben in Inputfeldern stehen schon drin
+
+
+Registrierung:
++wenn alert ein und ausblendet, springen die felder hoch und runter, bessere Lösung?
++wenn einmal passworteingabe angefangen, dann geht der alert nicht mehr weg. Beheben! 
++nach richtigen eingaben automatisches login und nicht erst wieder zum Login springen
 
 micha:
 +seo optimierungen usetzen?
