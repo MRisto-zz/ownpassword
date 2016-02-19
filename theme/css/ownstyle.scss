@@ -6,9 +6,14 @@
   color: #CC0000;
 }
 
-.mouse-cursor{
+.mouse-cursor-pointer{
   cursor:pointer;
 }
+
+.mouse-cursor-default{
+    cursor: default;
+}
+
 .login-wrapper {
   width: 360px;
   padding: 8% 0 0;

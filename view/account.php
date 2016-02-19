@@ -1,7 +1,7 @@
 <div class="container-full">
 	<div class="col-sm-12">
 		<div class="whitebox">
-			<h3>Account</h3>
+			<h3 class="mouse-cursor-default">Account</h3>
 			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Username:</label>
@@ -21,7 +21,7 @@
 					Save changes
 				</button>
 			</form>
-			<h3>Passwort ändern</h3>
+			<h3 class="mouse-cursor-default">Passwort ändern</h3>
 			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Altes Passwort:</label>
