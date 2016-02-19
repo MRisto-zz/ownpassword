@@ -73,12 +73,12 @@ class User {
 
 	//checks if the user with the given username exists
 	function isUsernameUnique($data) {
-		return checkUserExist('username', $data);
+		return $this->checkUserExist('username', $data);
 	}
 
 	//checks if the user with the given email exists
 	function isEmailUnique($data) {
-		return checkUserExist('email', $data);
+		return $this->checkUserExist('email', $data);
 	}
 
 	//checks if a user with the given type data combination exists

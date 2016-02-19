@@ -1,6 +1,6 @@
 <div class="container-full">
 	<div class="col-sm-3">
-		<div class="folders-box">
+		<div class="folders-box whitebox">
 			<h2>Ordner</h2>
 			<ul id="folders"></ul>
 			<span class="glyphicon glyphicon-plus" id="createFolder" aria-hidden="true"></span>
@@ -8,7 +8,7 @@
 		</div>
 	</div>
 	<div class="col-sm-9">
-		<div class="passwords-box">
+		<div class="passwords-box whitebox">
 			<h2>Password</h2>
 			<table class="table ">
 				<thead>

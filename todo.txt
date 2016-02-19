@@ -5,19 +5,22 @@ Allgmein:
 +registrierung passwort warnung ausblenden!
 +account change passwort, email,?
 +fehlermeldung wenn user falsche seite besucht?
-+design improvments
++design improvments -> wenn kasper nach logins sucht findet er unser design!!!!
 +documentation
 +komprimierung deflate /GZIP
 +caching
-+seo optimierungen usetzen
+
 + bilder auf die richtige größe skalieren!
-+passwordmanager fehlerüberprüfungen
++passwordmanager fehlerüberprüfungen? -> Php seite mysql keine rückgabewert
 
 Password:
-+aktualisiere die passswörter, falls man einen folder erstellt erledigt
 +password copy to cliboard with clipboard.js
-+password strength?
++password col passwordstrength?
 +password generator
-+password url?
-+folder delete -> delete all passwords?-> very risky
-+lade erst die daten und dann fade die boxen ein (folder, password)
++password col url?
++folder delete -> delete all passwords? mit warnung?
++lade erst die daten und dann fade die boxen ein (folder, password)?  visibility:hidden;
+
+
+micha:
++seo optimierungen usetzen?

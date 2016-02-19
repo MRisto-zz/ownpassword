@@ -40,6 +40,7 @@
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-sass/assets/javascripts/bootstrap.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>js/ownpassword.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>js/authentication.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>js/passwordmanager.js" type="text/javascript"></script>
 	</body>
 

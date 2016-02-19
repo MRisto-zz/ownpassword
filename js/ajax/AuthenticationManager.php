@@ -13,12 +13,12 @@ if (isset($_POST['action'])) {
 	if ($action == 'isUsernameUnique') {
 		$username = $db -> real_escape_string($_POST['username']);
 
-		echo $user->isEmailUnique($username, $mysqli, true) ? 'true' : 'false';
+		echo $user->isUsernameUnique($username) ? 'true' : 'false';
 	}
 	//Ajax call check if the email is Valid
 	if ($action == 'isEmailUnique') {
 		$email = $db -> real_escape_string($_POST['email']);
-		echo $user->isEmailUnique($email, $mysqli, true) ? 'true' : 'false;';
+		echo $user->isEmailUnique($email) ? 'true' : 'false;';
 	}
 
 }
