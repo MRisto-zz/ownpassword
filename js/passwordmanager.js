@@ -163,7 +163,7 @@ function PasswordManager() {
 				var obj = JSON.parse(jsonObj);
                 
 				for (var i = 0; i < obj.length; i++) {
-					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</a></td><td><a href="'+ obj[i].website_url+'">' + obj[i].website_url + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Show Password"></span></td><td id="passwordEditInChange" align="right"><span class="glyphicon glyphicon-pencil mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Edit Password"></span></td></tr>');
+					$("#password-content").append('<tr id="passwordParentInChange"><td>' + obj[i].title + '</a></td><td><a href="'+ obj[i].website_url+'" target="_blank">' + obj[i].website_url + '</td><td>' + obj[i].username + '</td><td id="passwordInChange"><span class="password-content">' + self.passwordHideContent + '</span> <span class="glyphicon glyphicon-eye-open mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Show Password"></span></td><td id="passwordEditInChange" align="right"><span class="glyphicon glyphicon-pencil mouse-cursor-pointer" aria-hidden="true" data-toggle="tooltip" title="Edit Password"></span></td></tr>');
 					$('#passwordInChange').addClass("password").click(function() {
 
 						self.showPassword($(this));
