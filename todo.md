@@ -6,6 +6,8 @@
 * compress with deflate or GZIP
 * error when user visits wrong page ( restricted) ?
 * load the content then fade the boxes in
+* hover effect on add or update ?Needed?
+* save when pressing enter
 
 ##Folder
 * delete folder with passwords -> warning

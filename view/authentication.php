@@ -14,7 +14,8 @@
 		<div>
 			<?php if(REGISTRATION_AVAILABLE){
 			?>
-			<form class="register-form" id="registrationForm" action="" method="post">
+
+			<form class="register-form" id="registrationForm" action="" method="post" autocomplete="off">
 				<div class="reg-username-feedback-content"></div>
 				<div class="input-group register reg-username">
 					<input type="text" class="form-control" id="reg-username" placeholder="Username" name="username">

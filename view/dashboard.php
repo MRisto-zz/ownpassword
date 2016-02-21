@@ -42,7 +42,7 @@
 				<h4 class="modal-title" id="myModalLabel">Passwort bearbeiten</h4>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" autocomplete="off">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Titel:</label>
 						<div class="col-sm-10">
@@ -58,13 +58,20 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Username:</label>
 						<div class="col-sm-10">
-							<input class="form-control" id="passwordEdit-username">
+							<input class="form-control" name="passwordEditUsername" id="passwordEdit-username">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Passwort:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="passwordEdit-password">
+							<div class="password-wrapper">
+								<!-- autocomplete workaround for chrome prefilling the passwords -->
+								<input class="form-control password-strength" autocomplete="new-password" name="passwordEditPassword" type="password" data-toggle="password" id="passwordEdit-password">
+							</div>
+							<div id="pwd-container">
+								<div class="pwstrength_viewport_progress"></div>
+							</div>
+
 						</div>
 					</div>
 					<input type="hidden" value="" id="passwordEdit-token">
@@ -97,7 +104,7 @@
 				<h4 class="modal-title" id="myModalLabel">Ordner bearbeiten</h4>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" autocomplete="off">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Titel:</label>
 						<div class="col-sm-10">
