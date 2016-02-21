@@ -39,7 +39,7 @@
 				<h4 class="modal-title mouse-cursor-default" id="myModalLabel">Passwort bearbeiten</h4>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="" method"">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Titel:</label>
 						<div class="col-sm-10">
@@ -55,7 +55,13 @@
 					<div class="form-group">
 						<label class="col-sm-2 control-label">Passwort:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="passwordEdit-password">
+							<div class="password-wrapper">
+								<input class="form-control password-strength" type="password" data-toggle="password" id="passwordEdit-password">
+							</div>
+							<div id="pwd-container">
+								<div class="pwstrength_viewport_progress"></div>
+							</div>
+
 						</div>
 					</div>
 					<input type="hidden" value="" id="passwordEdit-token">

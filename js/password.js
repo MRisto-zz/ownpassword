@@ -4,6 +4,30 @@
 
 function PasswordManager() {
 	var self = this;
+	//passwordstrength options
+	self.passwordstrengthoptions = {};
+	self.passwordstrengthoptions.ui = {
+		container : "#pwd-container",
+		showVerdictsInsideProgressBar : true,
+		viewports : {
+			progress : ".pwstrength_viewport_progress"
+		}
+	};
+	self.passwordstrengthoptions.common = {
+		usernameField : '#passwordEdit-username',
+		debug : true,
+		onLoad : function() {
+			$('#messages').text('Start typing password');
+		}
+	};
+
+	self.passwordstrengthoptions.rules = {
+		activated : {
+			wordTwoCharacterClasses : true,
+			wordRepetitions : true
+		}
+	};
+
 	//Variables
 	self.ajaxPasswordManagerUrl = scriptPath + "ajax/PasswordManager.php";
 	self.passwordHideContent = "****";
@@ -28,14 +52,14 @@ function PasswordManager() {
 			var obj = JSON.parse(jsonObj);
 			for (var i = 0; i < obj.length; i++) {
 				//$("#folders").append('<li class="folder" onclick="getPasswords(\'' + obj[i].token_id + '\')">' + obj[i].name + '</li>');
-				$('<li class="mouse-cursor-pointer">' + obj[i].name + '</li>').appendTo("#folders").addClass("folder").attr("token-id", obj[i].token_id).click(function() {
+				$('<li class="mouse-cursor-pointer">' + obj[i].name + '</li>').appendTo("#folders").addClass("folder").attr("data-folder-token-id", obj[i].token_id).click(function() {
 
 					self.openFolder($(this));
 				});
 			}
 			//if he gets a folderToken then he sets it as active and load the passwords from the folder
 			if (folderToken) {
-				$("[token-id=" + folderToken + "]").addClass("active");
+				$("[data-folder-token-id=" + folderToken + "]").addClass("active");
 				self.showPasswordList(folderToken);
 			}
 
@@ -82,7 +106,7 @@ function PasswordManager() {
 	self.updateFolder = function() {
 		//get the folder values
 		$('#folderEdit-title').val($('.folder.active').html());
-		$('#folderEdit-token').val($('.folder.active').attr("token-id"));
+		$('#folderEdit-token').val($('.folder.active').attr("data-folder-token-id"));
 		$('#folderEditModal').modal('show');
 		//remove old clicklisteners
 		$('.btn-folderEdit-save').unbind("click");
@@ -167,7 +191,7 @@ function PasswordManager() {
 
 						self.showPassword($(this));
 					}).removeAttr('id');
-					$('#passwordParentInChange').attr("password-token-id", obj[i].token_id).removeAttr('id');
+					$('#passwordParentInChange').attr("data-password-token-id", obj[i].token_id).removeAttr('id');
 					$('#passwordEditInChange').click(function() {
 
 						self.updatePassword($(this));
@@ -183,9 +207,12 @@ function PasswordManager() {
 		$(".folder").removeClass("active");
 		folder.addClass("active");
 		//shows passwords
-		self.showPasswordList(folder.attr("token-id"));
+		self.showPasswordList(folder.attr("data-folder-token-id"));
 	};
 
+	/***************************
+	 *PasswordManager Passwords*
+	 **************************/
 
 	//show  the password
 	self.showPassword = function(callingItem) {
@@ -208,7 +235,7 @@ function PasswordManager() {
 			data : {
 				action : "getPasswordData",
 				userToken : self.userToken,
-				passwordToken : callingItem.parent().attr("password-token-id")
+				passwordToken : callingItem.parent().attr("data-password-token-id")
 			}
 		}).done(function(jsonObj) {
 			var obj = JSON.parse(jsonObj);
@@ -222,6 +249,7 @@ function PasswordManager() {
 		$('#passwordEdit-username').val("");
 		$('#passwordEdit-password').val("");
 		$('#passwordEdit-token').val("");
+		$("#passwdfield").pwstrength("destroy");
 	};
 
 	//update the password in the database
@@ -229,12 +257,18 @@ function PasswordManager() {
 		//unbind the click events
 		$('.btn-passwordEdit-save').unbind("click");
 		$('.btn-passwordEdit-delete').unbind("click");
+
 		self.getPasswordData(callingItem, function(obj) {
 			$('#passwordEditModal').modal('show');
 			$('#passwordEdit-title').val(obj.title);
 			$('#passwordEdit-username').val(obj.username);
 			$('#passwordEdit-password').val(obj.password);
-			$('#passwordEdit-token').val(callingItem.parent().attr("password-token-id"));
+			$('#passwordEdit-token').val(callingItem.parent().attr("data-password-token-id"));
+
+			//passwordStrength
+
+
+			$('#passwordEdit-password').pwstrength(self.passwordstrengthoptions);
 
 			//when click on save
 			$('.btn-passwordEdit-save').click(function() {
@@ -296,7 +330,7 @@ function PasswordManager() {
 					action : "createPassword",
 					userToken : $("#user-token").val(),
 					title : $('#passwordEdit-title').val(),
-					folderToken : $('.folder.active').attr("token-id"),
+					folderToken : $('.folder.active').attr("data-folder-token-id"),
 					username : $('#passwordEdit-username').val(),
 					password : $('#passwordEdit-password').val()
 				}
@@ -314,39 +348,3 @@ function PasswordManager() {
 	};
 }
 
-
-$(document).ready(function() {
-	if (top.location.pathname.endsWith("dashboard")) {
-		console.log("Start PasswordManager");
-		var pwManager = new PasswordManager();
-		pwManager.getFoldersWithDefault();
-		//getFoldersWithDefault();
-
-		//add the createPassword clickListener
-		$('#createPassword').click(function() {
-			pwManager.createPassword();
-		});
-		//add the createFolder clickListener
-		$('#createFolder').click(function() {
-			pwManager.createFolder();
-		});
-		//add the updateFolder clickListener
-		$('#updateFolder').click(function() {
-			pwManager.updateFolder();
-		});
-
-		//resets passwordEditModal
-		$('#passwordEditModal').on('hidden.bs.modal', function(e) {
-			pwManager.clearPasswordEditValues();
-			$('.btn-passwordEdit-delete').show();
-		});
-
-		//resets folderEditModal
-		$('#folderEditModal').on('hidden.bs.modal', function(e) {
-			pwManager.clearFolderEditValues();
-			//and show the delete button
-			$('.btn-folderEdit-delete').show();
-		});
-
-	}
-});

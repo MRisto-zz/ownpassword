@@ -39,6 +39,10 @@ if (isset($_GET['site']) && $site[$_GET['site']]) {
 			//TODO: FEHLERMELDUNG
 			header('location:' . SCRIPT_ROOT . 'site/' . $site['authentication']['url']);
 		}
+		//if logged in and u want to acces the authentication page
+		if($_GET['site'] == 'authentication' && $user -> isLoggedIn()){
+			header('location:' . SCRIPT_ROOT . 'site/' . $site['dashboard']['url']);
+		}
 
 		$currentSite = $site[$_GET['site']];
 		$view = $currentSite['url'] . $ending;

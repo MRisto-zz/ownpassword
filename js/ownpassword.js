@@ -10,11 +10,53 @@ if ( typeof String.prototype.endsWith != 'function') {
 	};
 };
 
+//document ready
 $(document).ready(function() {
-	if (top.location.pathname.endsWith("account")) {
-		console.log("account");
-		$('#accountEdit-username').val();
-		$('#accountEdit-email').val();
-		$('#accountEdit-password').val();
+	if (top.location.pathname.endsWith("dashboard")) {
+		console.log("Start PasswordManager");
+		var pwManager = new PasswordManager();
+		pwManager.getFoldersWithDefault();
+		//getFoldersWithDefault();
+
+		//add the createPassword clickListener
+		$('#createPassword').click(function() {
+			pwManager.createPassword();
+		});
+		//add the createFolder clickListener
+		$('#createFolder').click(function() {
+			pwManager.createFolder();
+		});
+		//add the updateFolder clickListener
+		$('#updateFolder').click(function() {
+			pwManager.updateFolder();
+		});
+
+		//resets passwordEditModal
+		$('#passwordEditModal').on('hidden.bs.modal', function(e) {
+			pwManager.clearPasswordEditValues();
+			$('.btn-passwordEdit-delete').show();
+		});
+
+		//resets folderEditModal
+		$('#folderEditModal').on('hidden.bs.modal', function(e) {
+			pwManager.clearFolderEditValues();
+			//and show the delete button
+			$('.btn-folderEdit-delete').show();
+		});
+
+		$('#passwordEdit-password').on('show.bs.password', function(e) {
+			// code here
+			$("#passwordEdit-password").pwstrength("destroy");
+			$("input.password-strength:password").removeAttr('id');
+			$('input.password-strength:text').attr('id', 'passwordEdit-password');
+			$('#passwordEdit-password').pwstrength(pwManager.passwordstrengthoptions);
+		});
+		$('#passwordEdit-password').on('hide.bs.password', function(e) {
+			// code here
+			$("#passwordEdit-password").pwstrength("destroy");
+			$("input.password-strength:text").removeAttr('id');
+			$('input.password-strength:password').attr('id', 'passwordEdit-password');
+			$('#passwordEdit-password').pwstrength(pwManager.passwordstrengthoptions);
+		});
 	}
 });
