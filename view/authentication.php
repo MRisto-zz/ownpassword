@@ -1,4 +1,4 @@
-<div class="login-wrapper">
+<div class="login-wrapper form mouse-cursor-default">
 	<div class="login-page">
 		<img src="<?php echo SCRIPT_ROOT?>/theme/images/logo.png" class="img-responsive" alt="Logo">
 		<div class="messages">
@@ -11,7 +11,7 @@
 			}
 			?>
 		</div>
-		<div class="form mouse-cursor-default">
+		<div>
 			<?php if(REGISTRATION_AVAILABLE){
 			?>
 			<form class="register-form" id="registrationForm" action="" method="post">
