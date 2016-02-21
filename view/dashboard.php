@@ -52,7 +52,7 @@
                     <div class="form-group">
 						<label class="col-sm-2 control-label">URL:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="passwordEdit-website_url">
+							<input class="form-control" type="text" id="passwordEdit-website_url" placeholder="http://example.com">
 						</div>
 					</div>
 					<div class="form-group">

@@ -292,7 +292,7 @@ function PasswordManager() {
 						userToken : self.userToken,
 						passwordToken : $('#passwordEdit-token').val(),
 						title : $('#passwordEdit-title').val(),
-						website_url : $('#passwordEdit-website_url').val(),
+						website_url : self.convertToUrl($('#passwordEdit-website_url').val()),
 						username : $('#passwordEdit-username').val(),
 						password : $('#passwordEdit-password').val()
 					}
@@ -348,7 +348,7 @@ function PasswordManager() {
 					action : "createPassword",
 					userToken : $("#user-token").val(),
 					title : $('#passwordEdit-title').val(),
-					website_url : $('#passwordEdit-website_url').val(),
+					website_url : self.convertToUrl($('#passwordEdit-website_url').val()),
 					folderToken : $('.folder.active').attr("data-folder-token-id"),
 					username : $('#passwordEdit-username').val(),
 					password : $('#passwordEdit-password').val()
@@ -364,5 +364,13 @@ function PasswordManager() {
 
 		});
 
+	};
+
+	self.convertToUrl = function(string) {
+		if (!/^https?:\/\//i.test(string)) {
+			return string = 'http://' + string;
+		} else {
+			return string;
+		}
 	};
 }
