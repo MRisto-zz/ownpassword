@@ -18,9 +18,10 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "pwstrength-bootstrap": "^1.2.10"
   },
   "devDependencies": {
-    "bootstrap-show-password": "^1.0.2"   
+    "bootstrap-show-password": "^1.0.2"
   }
 }

@@ -25,7 +25,7 @@
 		<meta name="keywords" content="passwort, passwort vergessen, passwort Programme, passwort speichern, passwort sammlung, online passwort manager, online passwort verwaltung">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="<?php echo SCRIPT_ROOT?>theme/images/favicon.ico" type="image/vnd.microsoft.icon">
-		<link rel="stylesheet" href="<?php echo SCRIPT_ROOT?>theme/css/style.css" type="text/css">
+		<link rel="stylesheet" href="<?php echo SCRIPT_ROOT?>theme/css/style.min.css" type="text/css">
 	</head>
 
 	<body>
@@ -44,13 +44,12 @@
 		}
 		?>
 
-		<script src="<?php echo SCRIPT_ROOT?>bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
-		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-sass/assets/javascripts/bootstrap.js" type="text/javascript"></script>
-		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-show-password/bootstrap-show-password.js" type="text/javascript"></script>
-		<script type="text/javascript" src="<?php echo SCRIPT_ROOT?>bower_components/pwstrength-bootstrap/dist/pwstrength-bootstrap-1.2.8.min.js"></script>
-		<script src="<?php echo SCRIPT_ROOT?>js/ownpassword.js" type="text/javascript"></script>
-		<script src="<?php echo SCRIPT_ROOT?>js/authentication.js" type="text/javascript"></script>
-		<script src="<?php echo SCRIPT_ROOT?>js/password.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-show-password/bootstrap-show-password.min.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>bower_components/pwstrength-bootstrap/dist/pwstrength-bootstrap-1.2.8.min.js" type="text/javascript"></script>
+		<script src="<?php echo SCRIPT_ROOT?>js/ownpasswordall.min.js" type="text/javascript"></script>
+
 	</body>
 
 </html>
