@@ -9,14 +9,6 @@ var authenticationManager = scriptPath + "ajax/AuthenticationManager.php";
  * Authentication
  ****************/
 
-/* Initialize the Popover */
-function initPopover() {
-	$('[data-toggle="popover"]').popover({
-		trigger : 'none',
-		container : 'body'
-	});
-}
-
 /*REGISTRATION AND LOGIN*/
 
 $('.message a').click(function() {
