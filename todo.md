@@ -4,24 +4,19 @@
 ##General(project specific)
 * caching
 * compress with deflate or GZIP
-* error when user visits wrong page ( restricted) ?
-* load the content then fade the boxes in
-* hover effect on add or update ?Needed?
-* save when pressing enter
+* seo in english -> michael
+* sind alle anforderungen erfüllt!!! -> doku überarbeiten -> michael, kevin, matze
 
 ##Folder
-* delete folder with passwords -> warning
-* when deleting the last folder, the folder still is in the folder list but deleted in the database
+* delete folder with passwords -> warning -> Michael, Kevin
+* folder create and folder update ( title in modal) ->matze
 
 ##Password
-* copy to clipboard when show the decrypted password (Feature)
-* password generator (Feature)
-* show the folder the user is currently in, in the password-box
-* the user isnt allowed to add a password when there is no folder
+* copy to clipboard when show the decrypted password (Feature) ->matze
+* password generator (Feature) ?? LOW Prio
+* Pasword create and Password update ( title in modal) ->matze
 
 ##Account
-* change Password or username or email ?Needed?
+* change Password or username or email -> Kevin
 
 ##Registration
-* the input is moving if the user enters something
-* automatic login after sucessfull registration ?Needed?
