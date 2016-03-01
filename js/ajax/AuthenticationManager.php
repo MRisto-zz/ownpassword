@@ -20,5 +20,12 @@ if (isset($_POST['action'])) {
 		$email = $db -> real_escape_string($_POST['email']);
 		echo $user->isEmailUnique($email) ? 'true' : 'false';
 	}
-
+    
+    if ($action == 'changePassword') {
+        $userToken = $db -> real_escape_string($_POST['userToken']);
+        $oldPassword = $db -> real_escape_string($_POST['oldPassword']);
+        $newPassword1 = $db -> real_escape_string($_POST['newPassword1']);
+        $newPassword2 = $db -> real_escape_string($_POST['newPassword2']);
+        echo $user->changePassword($userToken, $oldPassword, $newPassword1, $newPassword2) ? 'true' : 'false';
+    }
 }

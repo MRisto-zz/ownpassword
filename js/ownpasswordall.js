@@ -584,5 +584,24 @@ $(document).ready(function() {
 		$(function() {
 			$("[data-toggle='tooltip']").tooltip();
 		});
-	}
+	} else if (top.location.pathname.endsWith("account")) {
+        $('.btn-passwordEdit-save').click(function() {
+			$.ajax({
+				method : "POST",
+				url : scriptPath + "ajax/PasswordManager.php",
+				data : {
+					action : "changePassword",
+					userToken : $("#user-token").val(),
+					oldPassword : $('#oldPassword').val(),
+                    newPassword1 : $('#newPassword1').val(),
+                    newPassword2 : $('#newPassword2').val()
+				}
+			}).done(function(jsonObj) {
+				console.log("CHANGED PASSWORD");
+                console.log(jsonObj);
+                var Object = JSON.parse(jsonObj);
+			});
+
+		});
+    }
 });

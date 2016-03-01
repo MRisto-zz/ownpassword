@@ -10,6 +10,16 @@ if ( typeof String.prototype.endsWith != 'function') {
 	};
 };
 
+function alertMsg(reference, msg) {
+	$(reference).html("");
+	$('<div class="alert alert-danger">').appendTo(reference).html(msg);
+};
+
+function successMsg(reference, msg) {
+	$(reference).html("");
+	$('<div class="alert alert-success">').appendTo(reference).html(msg);
+};
+
 //document ready
 $(document).ready(function() {
 	if (top.location.pathname.endsWith("dashboard")) {
@@ -62,5 +72,27 @@ $(document).ready(function() {
 		$(function() {
 			$("[data-toggle='tooltip']").tooltip();
 		});
-	}
+	} else if (top.location.pathname.endsWith("account")) {
+        $('.btn-passwordEdit-save').click(function() {
+			$.ajax({
+				method : "POST",
+				url : scriptPath + "ajax/AuthenticationManager.php",
+				data : {
+					action : "changePassword",
+					userToken : $('#user-token').val(),
+					oldPassword : $('#oldPassword').val(),
+                    newPassword1 : $('#newPassword1').val(),
+                    newPassword2 : $('#newPassword2').val()
+				}
+			}).done(function(jsonObj) {
+                console.log(jsonObj);
+                if(jsonObj == 'true') {
+                    successMsg($('.reg-changePassword-feedback-content'), "Password change was successful!");
+                } else {
+                    alertMsg($('.reg-changePassword-feedback-content'), "Password change failed!");
+                }
+			});
+
+		});
+    }
 });

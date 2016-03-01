@@ -48,7 +48,10 @@
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/bootstrap-show-password/bootstrap-show-password.min.js" type="text/javascript"></script>
 		<script src="<?php echo SCRIPT_ROOT?>bower_components/pwstrength-bootstrap/dist/pwstrength-bootstrap-1.2.8.min.js" type="text/javascript"></script>
-		<script src="<?php echo SCRIPT_ROOT?>js/ownpasswordall.min.js" type="text/javascript"></script>
+<!--		<script src="<?php echo SCRIPT_ROOT?>js/ownpasswordall.min.js" type="text/javascript"></script>-->
+        <script src="<?php echo SCRIPT_ROOT?>js/password.js" type="text/javascript"></script>
+        <script src="<?php echo SCRIPT_ROOT?>js/authentication.js" type="text/javascript"></script>
+        <script src="<?php echo SCRIPT_ROOT?>js/ownpassword.js" type="text/javascript"></script>
 
 	</body>
 

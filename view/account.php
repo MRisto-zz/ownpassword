@@ -1,45 +1,40 @@
 <div class="container-full mouse-cursor-default">
 	<div class="col-sm-12">
 		<div class="whitebox">
-			<h3>Account</h3>
+			<h3>Edit Account</h3>
 			<form class="form-horizontal">
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Username:</label>
-					<div class="col-sm-9">
-						<input class="form-control" name="username" id="accountEdit-username">
-					</div>
-				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Email:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="text" name="email" id="accountEdit-email">
+						<input class="form-control" type="text" name="email" id="accountEdit-email" placeholder="Email">
 					</div>
 				</div>
 
 				<div class="col-sm-3"></div>
-				<button type="button" class="btn btn-primary btn-accountEdit-save">
+				<button type="button" class="btn btn-primary btn-emailEdit-save">
 					Save changes
 				</button>
 			</form>
-			<h3>Passwort ändern</h3>
+			<h3>Edit Password</h3>
 			<form class="form-horizontal">
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Altes Passwort:</label>
+                    <div class="reg-changePassword-feedback-content"></div>
+					<label class="col-sm-3 control-label">old Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="oldPassword" id="accountEdit-password">
+						<input class="form-control" type="password" name="oldPassword" id="oldPassword" placeholder="old password">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Neues Passwort:</label>
+					<label class="col-sm-3 control-label">new Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="newPassword" id="accountEdit-password">
+						<input class="form-control" type="password" name="newPassword1" id="newPassword1" placeholder="new password">
 
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Passwort Wiederholung:</label>
+					<label class="col-sm-3 control-label">repeat new Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="newPassword" id="accountEdit-password">
+						<input class="form-control" type="password" name="newPassword2" id="newPassword2" placeholder="new password">
 					</div>
 				</div>
 				<div class="col-sm-3"></div>

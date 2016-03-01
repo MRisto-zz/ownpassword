@@ -110,8 +110,30 @@ class User {
 		
 	}
 	
-	function changePassword($userToken,$oldPassword, $newPassword){
-		
+	function changePassword($userToken,$oldPassword, $newPassword1, $newPassword2){
+		//if there is a row with the given username
+		if ($stmt = $this -> db -> prepare("SELECT id, username, password, salt FROM users WHERE token_id = ?")) {
+			$stmt -> bind_param('s', $userToken);
+			$stmt -> execute();
+			$stmt -> store_result();
+
+			$stmt -> bind_result($user_id, $username, $db_password, $salt);
+			$stmt -> fetch();
+			//hash the password
+			$oldPassword = hash('sha512', APPSALT . $oldPassword . $salt);
+            
+            
+            if($oldPassword == $db_password) {
+                if($newPassword1 == $newPassword2) {
+                    $newPassword1 = hash('sha512', APPSALT . $newPassword1 . $salt);
+                    $query = 'UPDATE users SET password="' . $newPassword1 . '" WHERE token_id ="' . $userToken . '"';
+					$this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
 	}
 
 }
