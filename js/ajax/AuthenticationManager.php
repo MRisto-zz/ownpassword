@@ -28,4 +28,10 @@ if (isset($_POST['action'])) {
         $newPassword2 = $db -> real_escape_string($_POST['newPassword2']);
         echo $user->changePassword($userToken, $oldPassword, $newPassword1, $newPassword2) ? 'true' : 'false';
     }
+    
+    if ($action == 'changeEmail') {
+        $userToken = $db -> real_escape_string($_POST['userToken']);
+        $email = $db -> real_escape_string($_POST['email']);
+        echo $user->changeEmail($userToken, $email) ? 'true' : 'false';
+    }
 }

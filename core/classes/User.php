@@ -135,5 +135,14 @@ class User {
             return false;
         }
 	}
+    
+    function changeEmail($userToken, $email){
+        if ($this -> isEmailUnique($email) == true){
+            $query = 'UPDATE users SET email ="' . $email . '" WHERE token_id ="' . $userToken . '"';
+            $this -> db -> query($query) or trigger_error($this -> db -> error . " " . $query);
+            return true;
+        }
+        return false;
+    }
 
 }

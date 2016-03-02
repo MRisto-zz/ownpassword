@@ -4,9 +4,10 @@
 			<h3>Edit Account</h3>
 			<form class="form-horizontal">
 				<div class="form-group">
+                    <div class="reg-changeEmail-feedback-content"></div>
 					<label class="col-sm-3 control-label">Email:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="text" name="email" id="accountEdit-email" placeholder="Email">
+						<input class="form-control" type="text" name="email" id="email" placeholder="Email">
 					</div>
 				</div>
 

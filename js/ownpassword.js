@@ -94,5 +94,24 @@ $(document).ready(function() {
 			});
 
 		});
+        
+        $('.btn-emailEdit-save').click(function() {
+            $.ajax({
+                method : "POST",
+                url : scriptPath + "ajax/AuthenticationManager.php",
+                data : {
+                    action : "changeEmail",
+                    userToken : $('#user-token').val(),
+                    email : $('#email').val()
+                }
+            }).done(function(jsonObj) {
+                console.log(jsonObj);
+                if(jsonObj == 'true') {
+                    successMsg($('.reg-changeEmail-feedback-content'), "Email change was successful!");
+                } else {
+                    alertMsg($('.reg-changeEmail-feedback-content'), "Email change failed!");
+                }
+            });
+        });
     }
 });
