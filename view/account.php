@@ -22,20 +22,20 @@
                     <div class="reg-changePassword-feedback-content"></div>
 					<label class="col-sm-3 control-label">old Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="oldPassword" id="oldPassword" placeholder="old password">
+						<input class="form-control" type="password" name="oldPassword" id="oldPassword" placeholder="old Password">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">new Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="newPassword1" id="newPassword1" placeholder="new password">
+						<input class="form-control" type="password" name="newPassword1" id="newPassword1" placeholder="new Password">
 
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">repeat new Password:</label>
 					<div class="col-sm-9">
-						<input class="form-control" type="password" name="newPassword2" id="newPassword2" placeholder="new password">
+						<input class="form-control" type="password" name="newPassword2" id="newPassword2" placeholder="new Password">
 					</div>
 				</div>
 				<div class="col-sm-3"></div>

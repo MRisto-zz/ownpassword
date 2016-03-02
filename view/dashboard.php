@@ -13,10 +13,10 @@
 			<table class="table ">
 				<thead>
 					<tr>
-						<th>title</th>
+						<th>Title</th>
                         <th>URL</th>
-						<th>username</th>
-						<th>password</th>
+						<th>Username</th>
+						<th>Password</th>
 						<th></th>
 
 					</tr>
@@ -39,14 +39,14 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Edit password</h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Password</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal" autocomplete="off">
 					<div class="form-group">
-						<label class="col-sm-2 control-label">title:</label>
+						<label class="col-sm-2 control-label">Title:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="passwordEdit-title">
+							<input class="form-control" type="text" id="passwordEdit-title" placeholder="Title">
 						</div>
 					</div>
                     <div class="form-group">
@@ -56,17 +56,17 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">username:</label>
+						<label class="col-sm-2 control-label">Username:</label>
 						<div class="col-sm-10">
-							<input class="form-control" name="passwordEditUsername" id="passwordEdit-username">
+							<input class="form-control" name="passwordEditUsername" id="passwordEdit-username" placeholder="Username">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">password:</label>
+						<label class="col-sm-2 control-label">Password:</label>
 						<div class="col-sm-10">
 							<div class="password-wrapper">
 								<!-- autocomplete workaround for chrome prefilling the passwords -->
-								<input class="form-control password-strength" autocomplete="new-password" name="passwordEditPassword" type="password" data-toggle="password" id="passwordEdit-password">
+								<input class="form-control password-strength" autocomplete="new-password" name="passwordEditPassword" type="password" data-toggle="password" id="passwordEdit-password" placeholder="Password">
 							</div>
 							<div id="pwd-container">
 								<div class="pwstrength_viewport_progress"></div>
@@ -101,14 +101,14 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="myModalLabel">Edit folder</h4>
+				<h4 class="modal-title" id="myModalLabel">Edit Folder</h4>
 			</div>
 			<div class="modal-body">
 				<form class="form-horizontal" autocomplete="off">
 					<div class="form-group">
-						<label class="col-sm-2 control-label">title:</label>
+						<label class="col-sm-2 control-label">Title:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="folderEdit-title">
+							<input class="form-control" type="text" id="folderEdit-title" placeholder="Title">
 						</div>
 					</div>
 					<input type="hidden" value="" id="folderEdit-token">
