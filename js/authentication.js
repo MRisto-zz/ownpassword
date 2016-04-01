@@ -1,4 +1,3 @@
-"use strict";
 var scripts = document.getElementsByTagName('script');
 var path = scripts[scripts.length-1].src.split('?')[0];
 var scriptPath = path.split('/').slice(0, -1).join('/') + '/';
@@ -70,7 +69,7 @@ $("#reg-username").on('input', function() {
 		usernameBool = false;
 		if (userNameValue.length <= 3) {
 			alertMsg($('.reg-username-feedback-content'), "Username ist zu kurz");
-		} else if (obj == false) {
+		} else if (obj === false) {
 			alertMsg($('.reg-username-feedback-content'), "Username ist vergeben");
 		} else {
 			usernameBool = true;
@@ -115,7 +114,7 @@ $("#reg-email").on('input', function() {
 		emailBool = false;
 		if (validateEmail($('#reg-email').val())) {
 			alertMsg($('.reg-email-feedback-content'), "Email ist nicht valide");
-		} else if (obj == false) {
+		} else if (obj === false) {
 			alertMsg($('.reg-email-feedback-content'), "Email ist vergeben");
 		} else {
 			emailBool = true;

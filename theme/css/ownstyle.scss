@@ -59,7 +59,9 @@
 .folders-box{
     text-align: center;
 }
-
+.glyphicon:hover{
+    color:#797979;
+}
 
 .form .register-form {
   display: none;
@@ -86,8 +88,8 @@
 }
 
 .folder:hover{
-    //color: white; 
-    background-color: #b7b7b7;
+    color: white; 
+    background-color:#797979 ;
 }
 
 #password-content{

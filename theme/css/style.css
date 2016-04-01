@@ -5869,6 +5869,9 @@ button.close {
 .folders-box {
   text-align: center; }
 
+.glyphicon:hover {
+  color: #797979; }
+
 .form .register-form {
   display: none; }
 
@@ -5890,7 +5893,8 @@ button.close {
   color: white; }
 
 .folder:hover {
-  background-color: #b7b7b7; }
+  color: white;
+  background-color: #797979; }
 
 #password-content {
   border-bottom: 1px solid #515D68; }

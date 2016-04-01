@@ -8,17 +8,17 @@ if ( typeof String.prototype.endsWith != 'function') {
 	String.prototype.endsWith = function(str) {
 		return this.substring(this.length - str.length, this.length) === str;
 	};
-};
+}
 
 function alertMsg(reference, msg) {
 	$(reference).html("");
 	$('<div class="alert alert-danger">').appendTo(reference).html(msg);
-};
+}
 
 function successMsg(reference, msg) {
 	$(reference).html("");
 	$('<div class="alert alert-success">').appendTo(reference).html(msg);
-};
+}
 
 //document ready
 $(document).ready(function() {
